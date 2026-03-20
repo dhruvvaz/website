@@ -394,6 +394,123 @@ a {
   line-height: 1.7;
 }
 
+.timeline-bullets {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.timeline-bullets li {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding-left: 1.25rem;
+  position: relative;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-bullets li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6rem;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.timeline-bullets li:last-child {
+  margin-bottom: 0;
+}
+
+/* ========== Education ========== */
+.education {
+  background: var(--bg-secondary);
+}
+
+.education-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.edu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  border-bottom: 1px solid var(--card-border);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.edu-header h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.edu-degree {
+  color: var(--gt-gold);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.edu-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+}
+
+.edu-location {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.edu-body {
+  padding: 2rem;
+}
+
+.edu-section {
+  margin-bottom: 1.75rem;
+}
+
+.edu-section:last-child {
+  margin-bottom: 0;
+}
+
+.edu-section h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.honors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.75rem;
+}
+
+.honor-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.honor-icon {
+  color: var(--gt-gold);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
 /* ========== Projects ========== */
 .projects-grid {
   display: grid;
@@ -488,6 +605,25 @@ a {
   letter-spacing: 1px;
 }
 
+.project-subtitle {
+  color: var(--gt-gold) !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  margin-bottom: 0.75rem !important;
+}
+
+.project-date {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.5px;
+}
+
+.projects-grid-2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 /* ========== Skills ========== */
 .skills {
   background: var(--bg-secondary);
@@ -540,6 +676,42 @@ a {
   border-color: var(--accent);
   color: var(--text);
   transform: translateY(-2px);
+}
+
+/* ========== Leadership ========== */
+.leadership {
+  background: var(--bg-secondary);
+}
+
+.leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.25rem;
+}
+
+.leadership-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  transition: all var(--transition);
+}
+
+.leadership-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+}
+
+.leadership-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.leadership-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
 }
 
 /* ========== Contact ========== */
@@ -640,7 +812,24 @@ a {
     grid-template-columns: 1fr;
   }
 
-  .projects-grid {
+  .projects-grid,
+  .projects-grid-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .edu-header {
+    flex-direction: column;
+  }
+
+  .edu-meta {
+    align-items: flex-start;
+  }
+
+  .honors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .leadership-grid {
     grid-template-columns: 1fr;
   }
 
